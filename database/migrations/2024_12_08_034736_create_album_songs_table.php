@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('album_songs', function (Blueprint $table) {
             $table->id();
+            $table->foreign('album_id', 'album_fk')->on('albums')->references('id');
+            $table->foreign('song_id', 'song_fk')->on('songs')->references('id');
             $table->timestamps();
         });
     }
