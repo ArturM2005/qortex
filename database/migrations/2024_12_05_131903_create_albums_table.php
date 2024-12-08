@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('song_id')->nullable();
-            $table->foreign('song_id', 'album_song_fk')->on('songs')->references('id');
+            $table->year('year');
         });
     }
 
